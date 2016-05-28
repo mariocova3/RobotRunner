@@ -18,7 +18,7 @@ public class playAnimation : MonoBehaviour
 		{
 				if (!anim.IsPlaying("moveCamera"))
 				{
-					anim.Play("moveCamera");
+				anim.Play("moveCamera");
 				}
 		}
 	}

@@ -3,25 +3,18 @@ using System.Collections;
 
 public class pressSpace : MonoBehaviour {
 
+	private Animation anim;
+
 	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
+	void Start () 
 	{
-		bool up = Input.GetButtonUp ("Jump");
-		if (up) 
-		{
-			StartCoroutine(LoadNextScene ());
-		}
-	
+		anim = GetComponent<Animation> ();
+		StartCoroutine(TextAnimation());
 	}
 
-	IEnumerator LoadNextScene()
+	IEnumerator TextAnimation()
 	{
-		yield return new WaitForSeconds (4);
-		Application.LoadLevel ("Main");
+		yield return new WaitForSeconds (8);
+		anim.Play ("Text Animation");
 	}
 }

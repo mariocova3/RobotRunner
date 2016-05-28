@@ -3,6 +3,7 @@ using System.Collections;
 
 public class loopPlay : MonoBehaviour 
 {
+	bool SpaceWasPressed = false;
 
 	private AudioSource audio;
 
@@ -19,12 +20,16 @@ public class loopPlay : MonoBehaviour
 		if (Input.GetButtonUp ("Jump")) 
 		{
 			audio.Stop ();
+			SpaceWasPressed = true;
 		}
 	}
 
 	IEnumerator PauseAndPlay()
 	{
 		yield return new WaitForSeconds (9);
-		audio.Play ();
+		if (SpaceWasPressed == false) 
+		{
+			audio.Play ();
+		}
 	}
 }
