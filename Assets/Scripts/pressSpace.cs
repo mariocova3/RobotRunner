@@ -15,6 +15,6 @@ public class pressSpace : MonoBehaviour {
 	IEnumerator TextAnimation()
 	{
 		yield return new WaitForSeconds (8);
-		anim.Play ("Text Animation");
+		anim.Play ("TextMove");
 	}
 }

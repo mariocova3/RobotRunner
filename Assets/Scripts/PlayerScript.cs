@@ -4,6 +4,8 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour {
 	
 	public GameControlScript control;
+
+	public bool HasCollidedOnce = false;
 	
 	float strafeSpeed = 2;
 	Animator anim;
@@ -45,6 +47,7 @@ public class PlayerScript : MonoBehaviour {
 			jumping == false)
 		{
 			control.SlowWorldDown();
+			HasCollidedOnce = true;
 		}
 		
 		Destroy(other.gameObject);
